@@ -1,2 +1,42 @@
-<h1>Survey#index</h1>
-<p>Find me in app/views/survey/index.html.erb</p>
+%h1 Follow Up Survey
+
+%h2 Instructions
+
+%ol
+  %li
+    Please answer
+    %span{style: "text-decoration: underline;"} every question
+  %li There are no right or wrong answers.
+  %li
+    The information you provide will be handled confidentially and reported in
+    such a way that individuals cannot be identified.
+  %li
+    If you have any questions or concerns about the study please do not
+    hesitate to telephone Joanna Latter on (02) 40420379.
+  %li
+    If you have any concerns or complaints about the conduct of the study, you
+    may contact the Manager of the Hunter New England Research Ethics and
+    Governance Unit on 49214950.
+  %li
+    - if params[:code].blank? || !params[:error].blank?
+      To start, enter your participant code (from your letter or email) in the
+      box below, then click the "Start Survey" button.
+    - else
+      To start, click the "Start Survey" button.
+
+%h1 Thank you for your time.
+
+%div{style: "text-align: center"}
+  = form_tag action: 'start' do
+    %p
+      - if params[:code].blank?
+        = text_field_tag 'code', params[:code]
+      - elsif !params[:error].blank?
+        = text_field_tag 'code', params[:code], class: "errorField"
+        %br
+        %span{class: 'error'}
+          Invalid participant code - please double check your letter or email
+          and try again.
+      - else
+        = hidden_field_tag 'code', params[:code]
+    %p= submit_tag "Start Survey"

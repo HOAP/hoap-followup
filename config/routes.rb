@@ -1,7 +1,7 @@
 Hoap2::Application.routes.draw do
   get "survey/index"
 
-  get "survey/start"
+  post "survey/start"
 
   match "survey/survey/:key" => 'survey#survey', :as => :survey
 
