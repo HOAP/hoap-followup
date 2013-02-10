@@ -1,3 +1,44 @@
 // Place all the styles related to the survey controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+table {
+  border-collapse: collapse;
+}
+
+th.title {
+  font-size: 70%;
+  vertical-align: bottom;
+  width: 6em;
+}
+
+td {
+  padding: 3px;
+}
+
+a { color: #000; }
+a:visited { color: #666; }
+a:hover { color: #fff; background-color:#000; }
+
+.errorField {
+  border: 1px solid red;
+  background-color: #FEE;
+}
+
+.error {
+  text-align: center;
+  color: red;
+}
+
+.notice {
+  text-align: center;
+  color: green;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.errorCell {
+  border: 3px solid red;
+}
