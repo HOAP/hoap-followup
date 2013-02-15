@@ -1,4 +1,6 @@
 class SurveyController < ApplicationController
+  before_filter :get_participant, only: [:survey, :save]
+
   def index
   end
 
@@ -17,5 +19,14 @@ class SurveyController < ApplicationController
   end
 
   def save
+  end
+
+  private
+
+  def get_participant
+    @participant = Participant.find_by_key(params[:key])
+    if @participant.nil?
+      redirect_to root_url
+    end
   end
 end

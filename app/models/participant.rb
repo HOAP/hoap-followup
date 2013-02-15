@@ -10,4 +10,14 @@ class Participant < ActiveRecord::Base
     end
     return result
   end
+
+  # Finds the participant for the given key (participant identifier given
+  # in the URL). Returns nil if the key is invalid or non-existent.
+  def self.find_by_key(key)
+    participant = nil
+    if !key.blank? && key =~ /^[0-9a-f]{12}$/i
+      participant = Participant.where(key: key).first
+    end
+    return participant
+  end
 end
