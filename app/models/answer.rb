@@ -17,4 +17,24 @@ class Answer < ActiveRecord::Base
   def self.find_for(participant)
     self.where(participant_id: participant.id, page: participant.page).order("id ASC")
   end
+
+  # Save all of the answer values for the submitted page.
+  # Returns all of the updated Answer objects, sorted by id, and a count of errors.
+  def self.save_all(params)
+    answers = []
+    error_count = 0
+    unless params == nil
+      params.each do |id, line|
+        ans = Answer.find(id)
+        # Drop the 'question_id' field, as this is used to make sure all answers for
+        # the page are sent back, but we do not actually want to change this field.
+        line.delete("question_id")
+        ans.update_attributes(line)
+        error_count += ans.errors.count
+        answers << ans
+      end
+    end
+    answers.sort_by! { |ans| ans.id }
+    return answers, error_count
+  end
 end

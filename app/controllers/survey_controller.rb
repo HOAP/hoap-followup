@@ -22,6 +22,17 @@ class SurveyController < ApplicationController
   end
 
   def save
+    @participant.update_progress(params[:page])
+    if !params[:answer].blank?
+      @answers, error_count = Answer.save_all(params[:answer])
+    end
+    if error_count == 0
+      @participant.next_page!
+      redirect_to survey_url(key: @participant.key)
+    else
+      @questions = Question.find_for(@participant)
+      render "page#{@participant.page}"
+    end
   end
 
   private
