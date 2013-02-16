@@ -1,0 +1,42 @@
+%h1 Drinking Diary
+
+%p.page
+  Page 1 of #{@participant.group == 0 ? "4" : "3"}
+
+= image_tag "drinks.png", size: "110x670", alt: "Standard Drinks Guide", style: "position: absolute; left: 1.5em; top: 20px;"
+
+%p
+  We'd like to ask you about your drinking in the <b>last 7 days</b>.
+
+%p
+  For each of the following days, starting with yesterday, please specify the
+  <b>number of standard drinks</b> you consumed.
+
+%p
+  We understand that it might be difficult to remember exactly so for these
+  questions <b>please give your best estimates</b>.
+
+%p
+  Please use the definitions of Standard Drinks on the left as a guide.
+
+= form_tag save_url(page: 1, key: @participant.key) do
+  %table{style: "margin-left: auto; margin-right: auto;"}
+    %tr
+      %th Day
+      %th How many drinks?
+    - 7.times do |i|
+      - @question, @answer = @questions[i], @answers[i]
+      %tr{class: cycle('row-colour-0', 'row-colour-1')}
+        %td= @question.text
+        %td{style: "text-align: center;"}
+          = hidden_field "answer[]", "question_id"
+          = text_field "answer[]", "value", size: 3, class: "required"
+
+  %p{style: "text-align: center;"}
+    = @questions[7].text
+    %br
+    - @answer = @answers[7]
+    = hidden_field "answer[]", "question_id"
+    = select "answer[]", "value", @questions[7].values, {include_blank: true}, {class: "required"}
+
+  = render partial: "continue"
