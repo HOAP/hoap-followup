@@ -16,6 +16,9 @@ class SurveyController < ApplicationController
   end
 
   def survey
+    @questions = Question.find_for(@participant)
+    @answers = Answer.find_for(@participant)
+    render "page#{@participant.page}"
   end
 
   def save

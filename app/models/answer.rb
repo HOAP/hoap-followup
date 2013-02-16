@@ -11,4 +11,10 @@ class Answer < ActiveRecord::Base
       a = Answer.create({participant_id: participant.id, question_id: question.id, page: question.page}, as: :creator)
     end
   end
+
+  # Get all of the Answer records for the given Participant, limited to
+  # their current page of the survey.
+  def self.find_for(participant)
+    self.where(participant_id: participant.id, page: participant.page).order("id ASC")
+  end
 end
