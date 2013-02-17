@@ -48,3 +48,10 @@ p.page {
   font-style: italic;
   font-size: 80%;
 }
+
+div.help {
+  display: none;
+  p {
+    padding-left: 2em;
+  }
+}

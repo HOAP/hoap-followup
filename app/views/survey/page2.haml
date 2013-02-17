@@ -1,0 +1,46 @@
+= image_tag "drinks.png", :style => "position: absolute; left: 1.5em; top: 20px;"
+
+%h1 Your Drinking
+
+%p.page
+  Page 2 of #{@participant.group == 0 ? "4" : "3"}
+
+%p
+  Now we'd like to ask some questions about your alcohol use in the <b>last 6
+  months</b>.
+
+= form_tag save_url(:page => 2, :key => @participant.key) do
+  - idx = 0
+  - @question, @answer = @questions[idx], @answers[idx]
+  %p#used
+    = @question.text.html_safe
+    = radio_button "answer[]", "value", "Yes", class: "required"
+    = label "answer[]", "value", "Yes", value: "Yes"
+    = radio_button "answer[]", "value", "No", class: "required"
+    = label "answer[]", "value", "No", value: "No"
+  - 11.times do |i|
+    - @question, @answer = @questions[idx += 1], @answers[idx]
+    %p.audit
+      #{i + 1}. #{@question.text.html_safe}
+      %br
+      = hidden_field "answer[]", "question_id"
+      = select "answer[]", "value", @question.values, {include_blank: true}, {class: "required"}
+  %div.help
+    12. Which services did you use?
+    - 4.times do
+      - @question, @answer = @questions[idx += 1], @answers[idx]
+      %p
+        %label
+          = check_box "answer[]", "value"
+          = @question.text.html_safe
+    %p
+      - @question, @answer = @questions[idx += 1], @answers[idx]
+      = @question.text.html_safe
+      %br
+      = text_area "answer[]", "value", size: "60x5"
+
+
+  = render :partial => "continue"
+
+:javascript
+  $(configureAudit);
