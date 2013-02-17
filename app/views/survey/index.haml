@@ -32,9 +32,9 @@
   = form_tag action: 'start' do
     %p
       - if params[:code].blank?
-        = text_field_tag 'code', params[:code], class: "required"
+        = text_field_tag 'code', params[:code], class: "required digits"
       - elsif !params[:error].blank?
-        = text_field_tag 'code', params[:code], class: "required error"
+        = text_field_tag 'code', params[:code], class: "required digits error"
         %br
         %label{for: 'code', class: 'error'}
           Invalid participant code - please double check your letter or email
