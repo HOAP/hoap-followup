@@ -7,6 +7,8 @@ Hoap2::Application.routes.draw do
 
   match "survey/save/:page/:key" => 'survey#save', :as => :save
 
+  match "p/:code" => 'survey#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
