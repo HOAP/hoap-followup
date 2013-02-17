@@ -15,7 +15,7 @@ questions = [
   {page: 1, text: "Six days ago"},
   {page: 1, text: "Seven days ago"},
   {page: 1, text: "Was last week typical of your usual drinking?", values: ["Yes", "No, I usually drink less", "No, I usually drink more"]},
-  {page: 2, text: "Have you had any alcohol in the last 6 months?", values: ["Yes", "No"]},
+  {page: 2, text: "Have you had any alcohol in the <b>last 6 months</b>?", values: ["Yes", "No"]},
   {page: 2, text: "How often do you have a drink containing alcohol?", values: ["Never or almost never", "Less than once a month", "Once a month", "Once every two weeks", "Once a week", "Two or three times a week", "Four or five times a week", "Six or seven times a week"]},
   {page: 2, text: "How many Standard Drinks containing alcohol do you have on a typical day when you are drinking? (Please refer to the Standard Drinks guide on the left)", values: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25-29", "30-34", "35-39", "40-49", "50 or more"]},
   {page: 2, text: "How often do you have 6 or more Standard Drinks on one occasion?", values: ["Never", "Less than monthly", "Monthly", "Weekly", "Daily or almost daily"]},
@@ -37,6 +37,17 @@ questions = [
   {page: 4, text: "Are there any comments you would like to make about your experience with alcohol or any aspect of being involved in this research?"}
 ]
 
+qq = Question.order("id ASC")
 questions.each do |question|
-  Question.create(question, {as: :creator})
+  q = qq.shift
+  if q.nil?
+    Question.create(question, {as: :creator})
+  else
+    q.update_attributes(question, {as: :creator})
+  end
+end
+unless qq.empty?
+  qq.each do |q|
+    q.delete
+  end
 end
