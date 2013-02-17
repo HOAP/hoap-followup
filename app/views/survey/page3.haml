@@ -1,0 +1,25 @@
+%h1 Previous Questionnaire
+
+%p.page
+  Page 3 of 4
+
+%p
+  Now, we’d like to ask you about the questionnaire you completed on the iPad
+  while waiting for your outpatient appointment.
+
+= form_tag save_url(page: 3, key: @participant.key) do
+  - 2.times do |i|
+    - @question, @answer = @questions[i], @answers[i]
+    %p{id: "q#{i + 13}"}
+      #{i + 13}. #{@question.text.html_safe}
+      = hidden_field "answer[]", "question_id"
+    %ul{id: "a#{i + 13}", style: "list-style-type: none;"}
+      - @question.values.each do |val|
+        %li
+          = radio_button "answer[]", "value", strip_tags(val), class: "required"
+          = label "answer[]", "value", val.html_safe, value: strip_tags(val)
+
+  = render partial: "continue"
+
+:javascript
+  $(configurePage3);

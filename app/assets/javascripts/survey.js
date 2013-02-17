@@ -17,3 +17,16 @@ function configureAudit() {
     }
   })
 }
+
+function configurePage3() {
+  $("#a13 input:radio").on("change", function() {
+    var val = $("#a13 input:radio:checked").val();
+    if (val == undefined || val == "Yes") {
+      $("#q14,#a14").show();
+      $("#a14 input").addClass("required");
+    } else {
+      $("#q14,#a14").hide();
+      $("#a14 input").removeClass("required")
+    }
+  });
+}
