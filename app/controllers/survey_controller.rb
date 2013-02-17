@@ -9,8 +9,9 @@ class SurveyController < ApplicationController
     if participant.nil?
       redirect_to root_url(code: params[:code], error: "true")
     else
-      participant.page = 1
-      participant.save
+      if participant.page == 0
+        participant.next_page!
+      end
       redirect_to survey_url(key: participant.key)
     end
   end
