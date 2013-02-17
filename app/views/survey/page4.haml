@@ -1,0 +1,14 @@
+%h1 Comments
+
+%p.page
+  Page #{@participant.group == 0 ? "4" : "3"} of #{@participant.group == 0 ? "4" : "3"}
+
+= form_tag save_url(page: 4, key: @participant.key) do
+  - @answer = @answers[0]
+  %p
+    = @questions[0].text.html_safe
+    %br
+    = hidden_field "answer[]", "question_id"
+    = text_area "answer[]", "value", size: "80x10"
+
+  = render partial: "continue"
