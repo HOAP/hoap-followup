@@ -20,14 +20,9 @@ a { color: #000; }
 a:visited { color: #666; }
 a:hover { color: #fff; background-color:#000; }
 
-.errorField {
+.error {
   border: 1px solid red;
   background-color: #FEE;
-}
-
-.error {
-  text-align: center;
-  color: red;
 }
 
 .notice {
@@ -35,12 +30,18 @@ a:hover { color: #fff; background-color:#000; }
   color: green;
 }
 
-.hide {
-  visibility: hidden;
+input.error {
+  border: 1px solid red;
+  background-color: #FEE;
 }
 
-.errorCell {
-  border: 3px solid red;
+select.error {
+  border: 1px solid red;
+}
+
+label.error {
+  border: 0;
+  color: red;
 }
 
 p.page {

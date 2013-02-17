@@ -26,11 +26,11 @@
       %th How many drinks?
     - 7.times do |i|
       - @question, @answer = @questions[i], @answers[i]
-      %tr{class: cycle('row-colour-0', 'row-colour-1')}
+      %tr
         %td= @question.text
         %td{style: "text-align: center;"}
           = hidden_field "answer[]", "question_id"
-          = text_field "answer[]", "value", size: 3, class: "required"
+          = text_field "answer[]", "value", size: 3, class: "required digits"
 
   %p{style: "text-align: center;"}
     = @questions[7].text

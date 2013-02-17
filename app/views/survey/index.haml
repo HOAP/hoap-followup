@@ -32,13 +32,16 @@
   = form_tag action: 'start' do
     %p
       - if params[:code].blank?
-        = text_field_tag 'code', params[:code]
+        = text_field_tag 'code', params[:code], class: "required"
       - elsif !params[:error].blank?
-        = text_field_tag 'code', params[:code], class: "errorField"
+        = text_field_tag 'code', params[:code], class: "required error"
         %br
-        %span{class: 'error'}
+        %label{for: 'code', class: 'error'}
           Invalid participant code - please double check your letter or email
           and try again.
       - else
         = hidden_field_tag 'code', params[:code]
     %p= submit_tag "Start Survey"
+
+:javascript
+  $(configureIndex);
