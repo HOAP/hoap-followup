@@ -27,7 +27,7 @@ class Participant < ActiveRecord::Base
   # Returns nil when given an invalid/unwanted completion status, or the created
   # Participant object otherwise
   def self.make(pno, completion_status)
-    case exit_code
+    case completion_status
     when "Control"
       # Control
       group = 1
