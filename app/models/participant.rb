@@ -67,7 +67,10 @@ class Participant < ActiveRecord::Base
   def next_page!
     if self.page < 5
       self.page += 1
-      if self.page == 5
+      if self.page == 3 && self.group == 1
+        # Control group skips questions about first survey
+        self.page += 1
+      elsif self.page == 5
         self.completed = true
       end
       self.save
