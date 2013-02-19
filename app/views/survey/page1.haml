@@ -20,6 +20,7 @@
   Please use the definitions of Standard Drinks on the left as a guide.
 
 = form_tag save_url(page: 1, key: @participant.key) do
+  - today = ActiveSupport::TimeZone.new("Australia/Sydney").now
   %table{style: "margin-left: auto; margin-right: auto;"}
     %tr
       %th Day
@@ -27,7 +28,10 @@
     - 7.times do |i|
       - @question, @answer = @questions[i], @answers[i]
       %tr
-        %td= @question.text
+        %td
+          - if i == 0
+            Yesterday,
+          = (today - (i + 1).days).strftime("%A %d %B %Y")
         %td{style: "text-align: center;"}
           = hidden_field "answer[]", "question_id"
           = text_field "answer[]", "value", size: 3, class: "required digits"
