@@ -20,13 +20,13 @@ function configureAudit() {
 
 function configurePage3() {
   $("#a13 input:radio").on("change", function() {
-    var val = $("#a13 input:radio:checked").val();
+    var val = $("#a1 input:radio:checked").val();
     if (val == undefined || val == "Yes") {
-      $("#q14,#a14").show();
-      $("#a14 input").addClass("required");
+      $("#q2,#a2").show();
+      $("#a2 input").addClass("required");
     } else {
-      $("#q14,#a14").hide();
-      $("#a14 input").removeClass("required")
+      $("#q2,#a2").hide();
+      $("#a2 input").removeClass("required")
     }
   });
 }
