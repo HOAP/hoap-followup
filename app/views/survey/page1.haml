@@ -1,7 +1,7 @@
 %h1 Drinking Diary
 
 %p.page
-  Page 1 of #{@participant.group == 0 ? "4" : "3"}
+  Page 1 of #{page_count @participant.group}
 
 = image_tag "drinks.png", size: "110x670", alt: "Standard Drinks Guide", style: "position: absolute; left: 1.5em; top: 20px;"
 

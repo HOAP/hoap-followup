@@ -1,7 +1,7 @@
 %h1 Comments
 
 %p.page
-  Page #{@participant.group == 0 ? "4" : "3"} of #{@participant.group == 0 ? "4" : "3"}
+  Page #{@participant.group == 0 ? "4" : "3"} of #{page_count @participant.group}
 
 = form_tag save_url(page: 4, key: @participant.key) do
   - @answer = @answers[0]
