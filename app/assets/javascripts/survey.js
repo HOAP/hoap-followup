@@ -19,7 +19,7 @@ function configureAudit() {
 }
 
 function configurePage3() {
-  $("#a13 input:radio").on("change", function() {
+  $("#a1 input:radio").on("change", function() {
     var val = $("#a1 input:radio:checked").val();
     if (val == undefined || val == "Yes") {
       $("#q2,#a2").show();
