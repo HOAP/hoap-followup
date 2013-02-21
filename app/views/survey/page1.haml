@@ -34,7 +34,7 @@
           = (today - (i + 1).days).strftime("%A %d %B %Y")
         %td{style: "text-align: center;"}
           = hidden_field "answer[]", "question_id"
-          = text_field "answer[]", "value", size: 3, class: "required digits"
+          = select "answer[]", "value", @question.values, {include_blank: true}, {class: "required"}
 
   %p{style: "text-align: center;"}
     = @questions[7].text

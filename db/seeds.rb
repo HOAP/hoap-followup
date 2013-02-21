@@ -7,13 +7,13 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 questions = [
-  {page: 1, text: "Yesterday"},
-  {page: 1, text: "Two days ago"},
-  {page: 1, text: "Three days ago"},
-  {page: 1, text: "Four days ago"},
-  {page: 1, text: "Five days ago"},
-  {page: 1, text: "Six days ago"},
-  {page: 1, text: "Seven days ago"},
+  {page: 1, text: "Yesterday", values: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25-29", "30-34", "35-39", "40-49", "50 or more"]},
+  {page: 1, text: "Two days ago", values: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25-29", "30-34", "35-39", "40-49", "50 or more"]},
+  {page: 1, text: "Three days ago", values: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25-29", "30-34", "35-39", "40-49", "50 or more"]},
+  {page: 1, text: "Four days ago", values: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25-29", "30-34", "35-39", "40-49", "50 or more"]},
+  {page: 1, text: "Five days ago", values: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25-29", "30-34", "35-39", "40-49", "50 or more"]},
+  {page: 1, text: "Six days ago", values: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25-29", "30-34", "35-39", "40-49", "50 or more"]},
+  {page: 1, text: "Seven days ago", values: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25-29", "30-34", "35-39", "40-49", "50 or more"]},
   {page: 1, text: "Was last week typical of your usual drinking?", values: ["Yes", "No, I usually drink less", "No, I usually drink more"]},
   {page: 2, text: "Have you had any alcohol in the <b>last 6 months</b>?", values: ["Yes", "No"]},
   {page: 2, text: "How often do you have a drink containing alcohol?", values: ["Never", "Monthly or less", "2-4 times a month", "2-3 times a week", "4 or more times a week"]},
