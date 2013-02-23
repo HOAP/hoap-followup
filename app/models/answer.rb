@@ -37,4 +37,10 @@ class Answer < ActiveRecord::Base
     answers.sort_by! { |ans| ans.id }
     return answers, error_count
   end
+
+  # Returns an array of all of the Answer#value values for the given
+  # Participant
+  def self.to_a(pid)
+    self.where(participant_id: pid).order("id ASC").pluck(:value)
+  end
 end

@@ -1,3 +1,5 @@
+require 'csv'
+
 class Participant < ActiveRecord::Base
   attr_accessible :completed, :group, :key, :page, :pno, :as => :creator
   attr_accessible :page
@@ -49,6 +51,19 @@ class Participant < ActiveRecord::Base
     return participant
   end
 
+  # Generates a CSV string containing the response data (i.e. the Answer values)
+  # for all participants who have at least started the survey.
+  def self.export_csv
+    participants = self.where("page > 0").order("id ASC")
+    results = CSV.generate do |file|
+      file << self.gen_header
+      participants.each do |ppt|
+        file << ppt.to_a
+      end
+    end
+    return results
+  end
+
   # Sets the current page to that of the page the participant
   # just submitted. Checks to prevent skipping ahead and to
   # ensure a valid page.
@@ -75,5 +90,35 @@ class Participant < ActiveRecord::Base
       end
       self.save
     end
+  end
+
+  # Returns the label for the participant's group
+  def group_label
+    if self.group == 0
+      "Intervention"
+    elsif self.group == 1
+      "Control"
+    else
+      "::INVALID::"
+    end
+  end
+
+  # Turns the current participant into an array of values, suitable
+  # for exporting to a CSV file.
+  def to_a
+    [self.pno, self.group_label] + Answer.to_a(self.id)
+  end
+
+  private
+
+  # Generates the header row for the export_csv method.
+  def self.gen_header
+    results = %w{ParticipantNo Group}
+    (1..4).each do |pp|
+      Question.where(page: pp).count.times do |q|
+        results << "Pg#{pp}Q#{q + 1}"
+      end
+    end
+    return results
   end
 end
