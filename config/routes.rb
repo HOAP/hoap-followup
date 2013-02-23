@@ -9,6 +9,10 @@ Hoap2::Application.routes.draw do
 
   match "p/:code" => 'survey#index'
 
+  match "admin(/index)" => 'admin#index', :as => :index
+
+  get "admin/export", :as => :export
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
