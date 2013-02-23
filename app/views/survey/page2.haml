@@ -20,7 +20,7 @@
     = label "answer[]", "value", "No", value: "No"
   - 11.times do |i|
     - @question, @answer = @questions[idx += 1], @answers[idx]
-    %p{class: "#{i < 8 ? "audit" : ""}"}
+    %p{id: "q#{i + 1}", class: "#{i < 8 ? "audit" : ""}"}
       #{i + 1}. #{@question.text.html_safe}
       %br
       = hidden_field "answer[]", "question_id"

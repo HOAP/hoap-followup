@@ -9,8 +9,8 @@ function configureAudit() {
       $(".audit select").addClass("required");
     }
   });
-  $(".audit:last select").on("change", function() {
-    if ($(".audit:last select").val() == "Yes, during the last 6 months") {
+  $("#q11 select").on("change", function() {
+    if ($("#q11 select").val() == "Yes, during the last 6 months") {
       $(".help").show();
     } else {
       $(".help").hide();
