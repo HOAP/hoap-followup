@@ -34,6 +34,7 @@
           = check_box "answer[]", "value"
           = @question.text.html_safe
     %p
+      = check_box_tag 'other'
       - @question, @answer = @questions[idx += 1], @answers[idx]
       = @question.text.html_safe
       %br

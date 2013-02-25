@@ -12,10 +12,25 @@ function configureAudit() {
   $("#q11 select").on("change", function() {
     if ($("#q11 select").val() == "Yes, during the last 6 months") {
       $(".help").show();
+      $(".help input").addClass("required")
     } else {
       $(".help").hide();
+      $(".help input").removeClass("required")
     }
-  })
+  });
+  $(".help input").on("click", function() {
+    if ($(".help input:checked").length > 0) {
+      $(".help input").removeClass("required");
+      $(".help p").removeClass("error");
+    } else {
+      $(".help input").addClass("required");
+    }
+    if ($("#other").prop("checked")) {
+      $(".help textarea").addClass("required");
+    } else {
+      $(".help textarea").removeClass("required");
+    }
+  });
 }
 
 function configurePage3() {
