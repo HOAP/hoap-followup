@@ -51,3 +51,7 @@ unless qq.empty?
     q.delete
   end
 end
+
+if User.count == 0
+  User.create({:login => "tony", :email => "tony@agrav.net", :password => "default", :password_confirmation => "default", :admin => true}, as: :creator)
+end
