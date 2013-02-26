@@ -9,7 +9,7 @@ Hoap2::Application.routes.draw do
 
   match "p/:code" => 'survey#index'
 
-  match "admin(/index)" => 'admin#index', :as => :index
+  match "admin(/index)" => 'admin#index', :as => :admin
 
   get "admin/export", :as => :export
 
