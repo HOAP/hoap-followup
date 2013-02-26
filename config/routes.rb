@@ -13,6 +13,8 @@ Hoap2::Application.routes.draw do
 
   get "admin/export", :as => :export
 
+  resource :user_session
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
