@@ -33,7 +33,7 @@ class Participant < ActiveRecord::Base
     when "Control"
       # Control
       group = 1
-    when "Finished"
+    when "Finished", "Intervention"
       # Intervention
       group = 0
     else
