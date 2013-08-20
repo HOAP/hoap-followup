@@ -34,7 +34,7 @@ questions = [
   {page: 2, text: "Other (please specify):"},
   {page: 3, text: "Did you get feedback on the iPad about your drinking?", values: ["Yes", "No, I did <b>not</b> receive feedback on my drinking but would like to.", "No, I did <b>not</b> receive feedback on my drinking and I am <b>not</b> interested in receiving it."]},
   {page: 3, text: "The feedback you received may have included comparisons of your drinking with the average drinking levels of others the same age and gender as you. The averages presented were:", values: ["About what I expected", "Higher than I expected", "Lower than I expected", "I had no idea what the average was", "I didn't get this feedback"]},
-  {page: 4, text: "We would be interested in any comments you would like to make about your experience with alcohol or any aspect of being involved in this research."}
+  {page: 7, text: "We would be interested in any comments you would like to make about your experience with alcohol or any aspect of being involved in this research."}
 ]
 
 qq = Question.order("id ASC")
