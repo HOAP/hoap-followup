@@ -32,8 +32,10 @@ questions = [
   {page: 2, text: "I attended a self-help group (e.g., Alcoholics Anonymous)"},
   {page: 2, text: "I used a self-help program on the internet"},
   {page: 2, text: "Other (please specify):"},
-  {page: 3, text: "Did you get feedback on the iPad about your drinking?", values: ["Yes", "No, I did <b>not</b> receive feedback on my drinking but would like to.", "No, I did <b>not</b> receive feedback on my drinking and I am <b>not</b> interested in receiving it."]},
-  {page: 3, text: "The feedback you received may have included comparisons of your drinking with the average drinking levels of others the same age and gender as you. The averages presented were:", values: ["About what I expected", "Higher than I expected", "Lower than I expected", "I had no idea what the average was", "I didn't get this feedback"]},
+  {page: 3, text: "<b>In the past 6 months</b>, how many times did you visit a doctor?<br><i>Do NOT include visits while in the hospital or the hospital emergency department.</i>", values: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25-29", "30-34", "35-39", "40-49", "50 or more"]},
+  {page: 3, text: "<b>In the past 6 months</b>, how many times did you go to a <b>hospital</b> emergency department?", values: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25-29", "30-34", "35-39", "40-49", "50 or more"]},
+  {page: 3, text: "How many different <b>times</b> did you stay in a hospital overnight or longer <b>in the past 6 months</b>?", values: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25-29", "30-34", "35-39", "40-49", "50 or more"]},
+  {page: 3, text: "How many total NIGHTS did you spend in the hospital <b>in the past 6 months</b>?", values: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25-29", "30-34", "35-39", "40-49", "50 or more"]},
   {page: 7, text: "We would be interested in any comments you would like to make about your experience with alcohol or any aspect of being involved in this research."}
 ]
 
