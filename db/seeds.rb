@@ -43,6 +43,9 @@ questions = [
   {page: 4, text: "Knowing you would ask me to answer similar questions in the future.", values: ["Yes", "No"]},
   {page: 4, text: "Completing the follow up surveys.", values: ["Yes", "No"]},
   {page: 4, text: "Sometimes people don't feel comfortable reporting how much they drink. How comfortable were you in answering the questions in this survey?", values: ["Very comfortable", "Somewhat comfortable", "Somewhat uncomfortable", "Very uncomfortable"]},
+  {page: 5, text: "Did you receive personalised feedback about your drinking on the iPad while you were waiting for your outpatient appointment?", values: ["No", "Yes"]},
+  {page: 5, text: "Would you be interested in receiving some personalised feedback about your drinking (this would involve following a link to a website in an email or a letter we send to you)?", values: ["No thanks", "Yes, please send the link to me"]},
+  {page: 5, text: "What date did you complete this questionnaire?"},
   {page: 7, text: "We would be interested in any comments you would like to make about your experience with alcohol or any aspect of being involved in this research."}
 ]
 
