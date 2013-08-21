@@ -36,6 +36,13 @@ questions = [
   {page: 3, text: "<b>In the past 6 months</b>, how many times did you go to a <b>hospital</b> emergency department?", values: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25-29", "30-34", "35-39", "40-49", "50 or more"]},
   {page: 3, text: "How many different <b>times</b> did you stay in a hospital overnight or longer <b>in the past 6 months</b>?", values: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25-29", "30-34", "35-39", "40-49", "50 or more"]},
   {page: 3, text: "How many total NIGHTS did you spend in the hospital <b>in the past 6 months</b>?", values: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25-29", "30-34", "35-39", "40-49", "50 or more"]},
+  {page: 4, text: "Did it make you think about your drinking?", values: ["Yes", "No"]},
+  {page: 4, text: "Did you change your drinking as a consequence?", values: ["My drinking did not change", "My drinking decreased", "My drinking increased"]},
+  {page: 4, text: "Deciding to take part.", values: ["Yes", "No"]},
+  {page: 4, text: "Answering questions about my drinking at the hospital.", values: ["Yes", "No"]},
+  {page: 4, text: "Knowing you would ask me to answer similar questions in the future.", values: ["Yes", "No"]},
+  {page: 4, text: "Completing the follow up surveys.", values: ["Yes", "No"]},
+  {page: 4, text: "Sometimes people don't feel comfortable reporting how much they drink. How comfortable were you in answering the questions in this survey?", values: ["Very comfortable", "Somewhat comfortable", "Somewhat uncomfortable", "Very uncomfortable"]},
   {page: 7, text: "We would be interested in any comments you would like to make about your experience with alcohol or any aspect of being involved in this research."}
 ]
 
