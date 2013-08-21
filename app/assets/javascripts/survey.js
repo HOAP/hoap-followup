@@ -33,19 +33,6 @@ function configureAudit() {
   });
 }
 
-function configurePage3() {
-  $("#a1 input:radio").on("change", function() {
-    var val = $("#a1 input:radio:checked").val();
-    if (val == undefined || val == "Yes") {
-      $("#q2,#a2").show();
-      $("#a2 input").addClass("required");
-    } else {
-      $("#q2,#a2").hide();
-      $("#a2 input").removeClass("required")
-    }
-  });
-}
-
 function missedAlert(form, validator) {
   var errors = validator.numberOfInvalids();
   if (errors) {
