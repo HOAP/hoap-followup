@@ -46,6 +46,23 @@ function configurePage4() {
   });
 }
 
+function configurePage5() {
+  $("#q0 input:radio").on("change", function() {
+    var val = $("#q0 input:radio:checked").val();
+    if (val == undefined || val == "No") {
+      $("#q1").show();
+      $("#q1 input").addClass("required");
+    } else {
+      $("#q1").hide();
+      $("#q1 input").removeClass("required");
+    }
+  });
+  $("#q2 input").datepicker({
+    dateFormat: "yy-mm-dd",
+    defaultDate: "-1y"
+  });
+}
+
 function missedAlert(form, validator) {
   var errors = validator.numberOfInvalids();
   if (errors) {
