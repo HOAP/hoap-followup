@@ -80,12 +80,15 @@ class Participant < ActiveRecord::Base
   # Increment the current page, and save.
   # If the end is reached, automatically sets completed to true.
   def next_page!
-    if self.page < 5
+    if self.page < 8
       self.page += 1
-      if self.page == 3 && self.group == 1
-        # Control group skips questions about first survey
+      if self.page == 4 && self.group == 1
+        # Group 'b' skips experience and feedback
+        self.page += 2
+      elsif self.page == 6 && self.group == 0
+        # Group 'a' skips your advice
         self.page += 1
-      elsif self.page == 5
+      elsif self.page == 8
         self.completed = true
       end
       self.save
