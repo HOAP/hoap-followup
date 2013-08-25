@@ -1,7 +1,6 @@
 %h1 Your use of healthcare in the last 6 months
 
-%p.page
-  Page 3 of 5
+= render partial: "page"
 
 = form_tag save_url(page: 3, key: @participant.key) do
   - @questions.length.times do |i|

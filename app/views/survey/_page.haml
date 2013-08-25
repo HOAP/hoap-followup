@@ -1,0 +1,17 @@
+%p.page
+  Page
+  - if @participant.group == 0
+    - if @participant.page <= 5
+      = @participant.page
+    - else
+      = @participant.page - 1
+  - else
+    - if @participant.page <= 3
+      = @participant.page
+    - else
+      = @participant.page - 2
+  of
+  - if @participant.group == 0
+    7
+  - else
+    6
