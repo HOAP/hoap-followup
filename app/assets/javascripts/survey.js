@@ -63,6 +63,23 @@ function configurePage5() {
   });
 }
 
+function configurePage6() {
+  $("#q3 input:radio").on("change", function() {
+    var val = $("#q3 input:radio:checked").val();
+    if (val == undefined || val == "Yes") {
+      $("#q4,#q5,#q6").show();
+      $("#q4,#q5,#q6").children("input,textarea").addClass("required");
+    } else {
+      $("#q4,#q5,#q6").hide();
+      $("#q4,#q5,#q6").children("input,textarea").removeClass("required");
+    }
+  });
+  $("#q6 input").datepicker({
+    dateFormat: "yy-mm-dd",
+    defaultDate: "-1y"
+  });
+}
+
 function missedAlert(form, validator) {
   var errors = validator.numberOfInvalids();
   if (errors) {

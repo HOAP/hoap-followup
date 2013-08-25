@@ -1,0 +1,32 @@
+%h1 We need your advice
+
+%p
+  18. Which of the following forms of support would you utilise if it were
+  available?
+
+= form_tag save_url(page: 6, key: @participant.key) do
+  - letters = %w{a b c}
+  - @questions.length.times do |i|
+    - @answer = @answers[i]
+    %p{id: "q#{i}"}
+      - if i <= 2
+        &nbsp;&nbsp;(#{letters[i]})
+      - else
+        #{i + 16}.
+      = @questions[i].text.html_safe
+      = hidden_field "answer[]", "question_id"
+      - if i == 5
+        %br
+        = text_area "answer[]", "value", size: "70x5", class: "required"
+      - elsif @questions[i].values.nil?
+        = text_field "answer[]", "value", class: "required"
+      - else
+        - @questions[i].values.each do |value|
+          %br
+          = radio_button "answer[]", "value", strip_tags(value), class: "required"
+          = label "answer[]", "value", value, value: strip_tags(value)
+
+  = render partial: "continue"
+
+:javascript
+  $(configurePage6);
