@@ -24,17 +24,15 @@ class Participant < ActiveRecord::Base
   end
 
   # Creates the Participant and blank Answer records for the given participant
-  # number and completion status from the first survey. Only control group and
-  # intervention group participants are created.
-  # Returns nil when given an invalid/unwanted completion status, or the created
-  # Participant object otherwise
-  def self.make(pno, completion_status)
-    case completion_status
-    when "Control"
-      # Control
+  # number and group assignment.
+  # Returns nil when given an invalid group, or a Participant object otherwise
+  def self.make(pno, group)
+    case group
+    when "b"
+      # Lesser drinkers
       group = 1
-    when "Finished", "Intervention"
-      # Intervention
+    when "a"
+      # Heavier drinkers
       group = 0
     else
       # Incomplete or ineligible
@@ -98,9 +96,9 @@ class Participant < ActiveRecord::Base
   # Returns the label for the participant's group
   def group_label
     if self.group == 0
-      "Intervention"
+      "a"
     elsif self.group == 1
-      "Control"
+      "b"
     else
       "::INVALID::"
     end
