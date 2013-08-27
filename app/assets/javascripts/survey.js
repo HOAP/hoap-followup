@@ -44,6 +44,16 @@ function configurePage4() {
       $("#q1,#q2,#q3,#q4,#q5").children("input").removeClass("required");
     }
   });
+  $("#q1 input:radio").on("change", function() {
+    var val = $("#q1 input:radio:checked").val();
+    if (val == "My drinking did not change") {
+      $("#q2,#q3,#q4,#q5,#q19").hide();
+      $("#q2,#q3,#q4,#q5").children("input").removeClass("required");
+    } else {
+      $("#q2,#q3,#q4,#q5,#q19").show();
+      $("#q2,#q3,#q4,#q5").children("input").addClass("required");
+    }
+  });
 }
 
 function configurePage5() {
