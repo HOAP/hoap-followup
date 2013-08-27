@@ -32,6 +32,7 @@ questions = [
   {page: 2, text: "I attended a self-help group (e.g., Alcoholics Anonymous)"},
   {page: 2, text: "I used a self-help program on the internet"},
   {page: 2, text: "Other (please specify):"},
+  {page: 2, text: "Would you like us to post feedback about your drinking to you (this would be based on the answers you provided in this questionnaire)?", values: ["No", "Yes"]},
   {page: 3, text: "<b>In the past 6 months</b>, how many times did you visit a doctor?<br><i>Do NOT include visits while in the hospital or the hospital emergency department.</i>", values: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25-29", "30-34", "35-39", "40-49", "50 or more"]},
   {page: 3, text: "<b>In the past 6 months</b>, how many times did you go to a <b>hospital</b> emergency department?", values: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25-29", "30-34", "35-39", "40-49", "50 or more"]},
   {page: 3, text: "How many different <b>times</b> did you stay in a hospital overnight or longer <b>in the past 6 months</b>?", values: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25-29", "30-34", "35-39", "40-49", "50 or more"]},

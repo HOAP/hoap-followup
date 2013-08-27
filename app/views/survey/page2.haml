@@ -37,6 +37,16 @@
       = @question.text.html_safe
       %br
       = text_area "answer[]", "value", size: "60x5"
+  - if @participant.group == 1
+    - @question, @answer = @questions[idx += 1], @answers[idx]
+    %p
+      13.
+      = @question.text.html_safe
+      = hidden_field "answer[]", "question_id"
+      - @question.values.each do |value|
+        %br
+        = radio_button "answer[]", "value", value, class: "required"
+        = label "answer[]", "value", value, value: value
 
 
   = render :partial => "continue"
