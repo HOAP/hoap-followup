@@ -1,11 +1,11 @@
 = image_tag "drinks.png", :style => "position: absolute; left: 1.5em; top: 20px;"
 
-%h1 Your Drinking in the Last 12 Months
+%h1 Your Drinking in the Last 6 Months
 
 = render partial: "page"
 
 %p
-  Now we'd like to ask some questions about your drinking in the <b>last 12
+  Now we'd like to ask some questions about your drinking in the <b>last 6
   months</b>.
 
 = form_tag save_url(:page => 2, :key => @participant.key) do
@@ -25,13 +25,12 @@
       = hidden_field "answer[]", "question_id"
       = select "answer[]", "value", @question.values, {include_blank: true}, {class: "required"}
   %div.help
-    12. Which services did you use <b>in the last 12 months</b>?
+    12. Which services did you use <b>in the last 6 months</b>?
     - 4.times do
       - @question, @answer = @questions[idx += 1], @answers[idx]
       %p
-        %label
-          = check_box "answer[]", "value"
-          = @question.text.html_safe
+        = check_box "answer[]", "value"
+        = label "answer[]", "value", @question.text.html_safe
     %p
       = check_box_tag 'other'
       - @question, @answer = @questions[idx += 1], @answers[idx]
