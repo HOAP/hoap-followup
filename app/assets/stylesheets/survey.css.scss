@@ -35,6 +35,10 @@ input.error {
   background-color: #FEE;
 }
 
+select {
+  margin-left: 2em;
+}
+
 select.error {
   border: 1px solid red;
 }

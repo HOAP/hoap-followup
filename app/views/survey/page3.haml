@@ -3,15 +3,12 @@
 = render partial: "page"
 
 = form_tag save_url(page: 3, key: @participant.key) do
-  - num = 12
-  - if @participant.group == 1
-    - num += 1
   - @questions.length.times do |i|
     - @question, @answer = @questions[i], @answers[i]
     %p{id: "q#{i + 1}"}
-      #{num += 1}. #{@question.text.html_safe}
+      = @question.text.html_safe
       = hidden_field "answer[]", "question_id"
-    %p{id: "a#{i + 1}"}
+      %br
       = select "answer[]", "value", @question.values, {include_blank: true}, {class: "required"}
       - case i
       - when 0
@@ -22,3 +19,6 @@
         nights.
 
   = render partial: "continue"
+
+:css
+  p { margin-bottom: 2em; }
