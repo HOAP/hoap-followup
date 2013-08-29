@@ -13,15 +13,16 @@
     %p{id: "q#{i}"}
       = @questions[i].text.html_safe
       = hidden_field "answer[]", "question_id"
+      %br
       - if @questions[i].values.nil?
         = text_field "answer[]", "value", class: "required"
       - else
-        - @questions[i].values.each do |value|
-          %br
-          = radio_button "answer[]", "value", strip_tags(value), class: "required"
-          = label "answer[]", "value", value, value: strip_tags(value)
+        = select "answer[]", "value", @questions[i].values, {include_blank: true}, {class: "required"}
 
   = render partial: "continue"
 
 :javascript
   $(configurePage5);
+
+:css
+  input { margin-left: 2em; }

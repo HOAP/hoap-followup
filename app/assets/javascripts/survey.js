@@ -62,17 +62,20 @@ function configurePage4() {
   $("#q1 select").on("click", p4q1);
 }
 
+function p5q0() {
+  var val = $("#q0 select").val();
+  if (val == undefined || val == "No") {
+    $("#q1").show();
+    $("#q1 input").addClass("required");
+  } else {
+    $("#q1").hide();
+    $("#q1 input").removeClass("required");
+  }
+}
+
 function configurePage5() {
-  $("#q0 input:radio").on("change", function() {
-    var val = $("#q0 input:radio:checked").val();
-    if (val == undefined || val == "No") {
-      $("#q1").show();
-      $("#q1 input").addClass("required");
-    } else {
-      $("#q1").hide();
-      $("#q1 input").removeClass("required");
-    }
-  });
+  p5q0();
+  $("#q0 select").on("click", p5q0);
   $("#q2 input").datepicker({
     dateFormat: "yy-mm-dd",
     defaultDate: "-1y"
