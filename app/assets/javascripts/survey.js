@@ -82,17 +82,20 @@ function configurePage5() {
   });
 }
 
+function p6q3() {
+  var val = $("#q3 select").val();
+  if (val == "Yes") {
+    $("#q4,#q5").show();
+    $("#q4,#q5").children("input,textarea").addClass("required");
+  } else {
+    $("#q4,#q5").hide();
+    $("#q4,#q5").children("input,textarea").removeClass("required");
+  }
+}
+
 function configurePage6() {
-  $("#q3 input:radio").on("change", function() {
-    var val = $("#q3 input:radio:checked").val();
-    if (val == undefined || val == "Yes") {
-      $("#q4,#q5").show();
-      $("#q4,#q5").children("input,textarea").addClass("required");
-    } else {
-      $("#q4,#q5").hide();
-      $("#q4,#q5").children("input,textarea").removeClass("required");
-    }
-  });
+  p6q3();
+  $("#q3 select").on("click", p6q3);
   $("#q6 input").datepicker({
     dateFormat: "yy-mm-dd",
     defaultDate: "-1y"
