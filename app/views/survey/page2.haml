@@ -43,10 +43,8 @@
       13.
       = @question.text.html_safe
       = hidden_field "answer[]", "question_id"
-      - @question.values.each do |value|
-        %br
-        = radio_button "answer[]", "value", value, class: "required"
-        = label "answer[]", "value", value, value: value
+      %br
+      = select "answer[]", "value", @question.values, {include_blank: true}, {class: "required"}
 
 
   = render :partial => "continue"
