@@ -15,7 +15,7 @@
 
 body { background-color: #fff; color: #333; }
 
-body, p, ol, ul, td, input {
+body, p, ol, ul, td, input, select, textarea {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   font-size:   100%;
   line-height: 140%;
@@ -30,4 +30,8 @@ div#content {
 h1, h2 {
   text-align: center;
   line-height: 1.2;
+}
+
+input, select {
+  margin-top: 5px;
 }
