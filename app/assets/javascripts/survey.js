@@ -33,27 +33,33 @@ function configureAudit() {
   });
 }
 
+function p4q0() {
+  var val = $("#q0 select").val();
+  if (val == "Yes") {
+    $("#q1").show();
+    $("#q1").children("input").addClass("required");
+  } else {
+    $("#q1").hide();
+    $("#q1").children("input").removeClass("required");
+  }
+}
+
+function p4q1() {
+  var val = $("#q1 select").val();
+  if (val == "My drinking increased" || val == "My drinking decreased") {
+    $("#q2,#q3,#q4,#q5,#q19").show();
+    $("#q2,#q3,#q4,#q5").children("input").addClass("required");
+  } else {
+    $("#q2,#q3,#q4,#q5,#q19").hide();
+    $("#q2,#q3,#q4,#q5").children("input").removeClass("required");
+  }
+}
+
 function configurePage4() {
-  $("#q0 input:radio").on("change", function() {
-    var val = $("#q0 input:radio:checked").val();
-    if (val == undefined || val == "Yes") {
-      $("#q1,#q2,#q3,#q4,#q5,#q19").show();
-      $("#q1,#q2,#q3,#q4,#q5").children("input").addClass("required");
-    } else {
-      $("#q1,#q2,#q3,#q4,#q5,#q19").hide();
-      $("#q1,#q2,#q3,#q4,#q5").children("input").removeClass("required");
-    }
-  });
-  $("#q1 input:radio").on("change", function() {
-    var val = $("#q1 input:radio:checked").val();
-    if (val == "My drinking did not change") {
-      $("#q2,#q3,#q4,#q5,#q19").hide();
-      $("#q2,#q3,#q4,#q5").children("input").removeClass("required");
-    } else {
-      $("#q2,#q3,#q4,#q5,#q19").show();
-      $("#q2,#q3,#q4,#q5").children("input").addClass("required");
-    }
-  });
+  p4q0();
+  p4q1();
+  $("#q0 select").on("click", p4q0);
+  $("#q1 select").on("click", p4q1);
 }
 
 function configurePage5() {

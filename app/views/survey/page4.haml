@@ -7,23 +7,19 @@
 
 = form_tag save_url(page: 4, key: @participant.key) do
   - letters = %w{a b c d}
-  - num = 16
   - @questions.length.times do |i|
     - @answer = @answers[i]
     - if i == 2
       %p{id: "q19"}
-        #{num += 1}. Which parts of the research might have affected your drinking?
+        Which parts of the research might have affected your drinking?
     %p{id: "q#{i}"}
       - if i >= 2 && i <= 5
         &nbsp;&nbsp;(#{letters[i - 2]})
-      - else
-        #{num += 1}.
       #{@questions[i].text.html_safe}
       = hidden_field "answer[]", "question_id"
-      - @questions[i].values.each do |value|
-        %br
-        = radio_button "answer[]", "value", strip_tags(value), class: "required"
-        = label "answer[]", "value", value, value: strip_tags(value)
+      %br
+      = select "answer[]", "value", @questions[i].values, {include_blank: true}, {class: "required"}
+
   = render partial: "continue"
 
 :javascript
