@@ -76,10 +76,6 @@ function p5q0() {
 function configurePage5() {
   p5q0();
   $("#q0 select").on("click", p5q0);
-  $("#q2 input").datepicker({
-    dateFormat: "yy-mm-dd",
-    defaultDate: "-1y"
-  });
 }
 
 function p6q3() {

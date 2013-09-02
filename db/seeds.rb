@@ -46,7 +46,6 @@ questions = [
   {page: 4, text: "Sometimes people don't feel comfortable reporting how much they drink. How comfortable were you in answering the questions in this survey?", values: ["Very comfortable", "Somewhat comfortable", "Somewhat uncomfortable", "Very uncomfortable"]},
   {page: 5, text: "Did you receive personalised feedback about your drinking on the iPad while you were waiting for your outpatient appointment?", values: ["No", "Yes"]},
   {page: 5, text: "Would you be interested in receiving some personalised feedback about your drinking (this would involve following a link to a website in an email or a letter we send to you)?", values: ["No thanks", "Yes, please send the link to me"]},
-  {page: 5, text: "What date did you complete this questionnaire?"},
   {page: 6, text: "Telephone support from a counsellor.", values: ["No", "Yes"]},
   {page: 6, text: "Access to a website that supports people who are trying to change their drinking.", values: ["No", "Yes"]},
   {page: 6, text: "Having results about my drinking sent to my GP.", values: ["No", "Yes"]},
