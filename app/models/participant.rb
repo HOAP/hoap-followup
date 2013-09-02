@@ -107,14 +107,14 @@ class Participant < ActiveRecord::Base
   # Turns the current participant into an array of values, suitable
   # for exporting to a CSV file.
   def to_a
-    [self.pno, self.group_label] + Answer.to_a(self.id)
+    [self.pno, self.group_label, self.updated_at.in_time_zone('Australia/Sydney')] + Answer.to_a(self.id)
   end
 
   private
 
   # Generates the header row for the export_csv method.
   def self.gen_header
-    results = %w{ParticipantNo Group}
+    results = %w{ParticipantNo Group Date}
     (1..4).each do |pp|
       Question.where(page: pp).count.times do |q|
         results << "Pg#{pp}Q#{q + 1}"
