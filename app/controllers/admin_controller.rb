@@ -5,7 +5,7 @@ class AdminController < ApplicationController
   end
 
   def export
-    filename = "HOAP6M-#{Time.zone.now.strftime("%Y%m%d%H%M")}.csv"
+    filename = "HOAP12M-#{Time.zone.now.strftime("%Y%m%d%H%M")}.csv"
     send_data(Participant.export_csv, type: 'text/csv', filename: filename)
   end
 end
