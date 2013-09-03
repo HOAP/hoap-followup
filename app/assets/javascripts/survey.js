@@ -92,10 +92,6 @@ function p6q3() {
 function configurePage6() {
   p6q3();
   $("#q3 select").on("click", p6q3);
-  $("#q6 input").datepicker({
-    dateFormat: "yy-mm-dd",
-    defaultDate: "-1y"
-  });
 }
 
 function missedAlert(form, validator) {

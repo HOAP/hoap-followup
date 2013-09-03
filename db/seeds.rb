@@ -52,7 +52,6 @@ questions = [
   {page: 6, text: "Would you be willing to take part in a brief telephone interview about how we might improve the way care is provided to patients with unhealthy drinking?", values: ["No", "Yes"]},
   {page: 6, text: "The best number to contact me on is:"},
   {page: 6, text: "The best days and times to call are:"},
-  {page: 6, text: "What date did you complete this questionnaire?"},
   {page: 7, text: "We would be interested in any comments you would like to make about your experience with alcohol or any aspect of being involved in this research."}
 ]
 
