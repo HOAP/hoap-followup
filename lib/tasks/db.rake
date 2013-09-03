@@ -17,6 +17,7 @@ namespace :db do
       participants = CSV.read("db/participant_list.csv")
       count = 0
       participants.each do |row|
+        next if Participant.exists?(pno: row[0])
         if Participant.make(row[0], row[1])
           count += 1
           print "."
