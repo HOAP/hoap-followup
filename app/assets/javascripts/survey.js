@@ -58,8 +58,8 @@ function p4q1() {
 function configurePage4() {
   p4q0();
   p4q1();
-  $("#q0 select").on("click", p4q0);
-  $("#q1 select").on("click", p4q1);
+  $("#q0 select").on("change", p4q0);
+  $("#q1 select").on("change", p4q1);
 }
 
 function p5q0() {
@@ -75,7 +75,7 @@ function p5q0() {
 
 function configurePage5() {
   p5q0();
-  $("#q0 select").on("click", p5q0);
+  $("#q0 select").on("change", p5q0);
 }
 
 function p6q3() {
@@ -91,7 +91,7 @@ function p6q3() {
 
 function configurePage6() {
   p6q3();
-  $("#q3 select").on("click", p6q3);
+  $("#q3 select").on("change", p6q3);
 }
 
 function missedAlert(form, validator) {
