@@ -115,7 +115,7 @@ class Participant < ActiveRecord::Base
   # Generates the header row for the export_csv method.
   def self.gen_header
     results = %w{ParticipantNo Group Date}
-    (1..4).each do |pp|
+    (1..7).each do |pp|
       Question.where(page: pp).count.times do |q|
         results << "Pg#{pp}Q#{q + 1}"
       end
