@@ -71,5 +71,5 @@ unless qq.empty?
 end
 
 if User.count == 0
-  User.create({:login => "tony", :email => "tony@agrav.net", :password => "default", :password_confirmation => "default", :admin => true}, as: :creator)
+  User.create({:login => "admin", :email => "admin@example.com", :password => "default", :password_confirmation => "default", :admin => true}, as: :creator)
 end
