@@ -5,7 +5,7 @@ class SurveyController < ApplicationController
   end
 
   def start
-    participant = Participant.find_code(params[:code])
+    participant = Participant.make_for_demo
     if participant.nil?
       redirect_to root_url(code: params[:code], error: "true")
     else

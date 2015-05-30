@@ -23,6 +23,10 @@ class Participant < ActiveRecord::Base
     return participant
   end
 
+  def self.make_for_demo
+    self.make(SecureRandom.hex(5), "a")
+  end
+
   # Creates the Participant and blank Answer records for the given participant
   # number and completion status from the first survey. Only control group and
   # intervention group participants are created.
