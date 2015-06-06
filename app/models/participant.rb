@@ -24,7 +24,7 @@ class Participant < ActiveRecord::Base
   end
 
   def self.make_for_demo
-    self.make(SecureRandom.hex(5), "a")
+    self.make(SecureRandom.hex(5), "Intervention")
   end
 
   # Creates the Participant and blank Answer records for the given participant
