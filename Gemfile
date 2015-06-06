@@ -40,3 +40,6 @@ gem 'authlogic'
 
 # To use debugger
 # gem 'debugger'
+
+# Gems for Heroku
+gem 'rails_12factor', group: :production
